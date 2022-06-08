@@ -28,7 +28,6 @@ viz = {
 ---.__(___)
 ''', }
 
-# moves = ['R', 'P', 'S']
 moves = {
     'R': 'Rock',
     'P': 'Paper',
