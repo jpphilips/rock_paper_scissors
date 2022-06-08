@@ -28,8 +28,8 @@ viz = {
 ---.__(___)
 ''', }
 
-moves = ['R', 'P', 'S']
-m_text = {
+# moves = ['R', 'P', 'S']
+moves = {
     'R': 'Rock',
     'P': 'Paper',
     'S': 'Scissors'
@@ -40,14 +40,14 @@ game = True
 while game:
     user = input(
         "What do you choose? Type R for Rock, P for Paper, S for Scissors\n").upper()
-    if user not in moves:
+    if user not in moves.keys():
         print("invalid choice!")
     else:
-        computer = random.choice(moves)
+        computer = random.choice(list(moves.keys()))
 
         print(f"{viz[user]} vs {viz[computer]}")
         print(
-            f"Player ({m_text[user]}) : Computer ({m_text[computer]})")
+            f"Player ({moves[user]}) : Computer ({moves[computer]})")
 
         if user == computer:
             print("Draw")
