@@ -1,7 +1,7 @@
 import random
 
 viz = {
-    0: '''
+    'R': '''
     _______
 ---'   ____)
       (_____)
@@ -10,7 +10,7 @@ viz = {
 ---.__(___)
 ''',
 
-    1: '''
+    'P': '''
     _______
 ---'   ____)____
           ______)
@@ -19,7 +19,7 @@ viz = {
 ---.__________)
 ''',
 
-    2: '''
+    'S': '''
     _______
 ---'   ____)____
           ______)
@@ -36,25 +36,23 @@ m_text = {
 }
 game = True
 
+
 while game:
-    try:
-        user = moves.index(
-            input("What do you choose? Type R for Rock, P for Paper, S for Scissors\n").upper())
-    except ValueError:
+    user = input(
+        "What do you choose? Type R for Rock, P for Paper, S for Scissors\n").upper()
+    if user not in moves:
         print("invalid choice!")
     else:
-        computer = random.randint(0, len(moves)-1)
-        user_choice = moves[user]
-        com_choice = moves[computer]
+        computer = random.choice(moves)
 
         print(f"{viz[user]} vs {viz[computer]}")
         print(
-            f"Player ({m_text[user_choice]}) : Computer ({m_text[com_choice]})")
+            f"Player ({m_text[user]}) : Computer ({m_text[computer]})")
 
-        if user_choice == com_choice:
+        if user == computer:
             print("Draw")
         else:
-            if (user == 0 and computer == 2) or (user == 1 and computer == 0) or (user == 2 and computer == 1):
+            if (user == 'R' and computer == 'S') or (user == 'P' and computer == 'R') or (user == 'S' and computer == 'P'):
                 print("You win!")
             else:
                 print("You lose!!!")
