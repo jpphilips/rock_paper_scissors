@@ -33,10 +33,10 @@ moves = {
     'P': 'Paper',
     'S': 'Scissors'
 }
-game = True
 
+playing = True
 
-while game:
+while playing:
     user = input(
         "What do you choose? Type R for Rock, P for Paper, S for Scissors\n").upper()
     if user not in moves.keys():
@@ -56,4 +56,4 @@ while game:
             else:
                 print("You lose!!!")
 
-            game = False
+            playing = False
