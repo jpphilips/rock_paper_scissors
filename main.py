@@ -38,7 +38,7 @@ playing = True
 
 while playing:
     user = input(
-        "What do you choose? Type R for Rock, P for Paper, S for Scissors\n").upper()
+        "What do you choose? Type R for Rock, P for Paper, S for Scissors: ").upper()
     if user not in moves.keys():
         print("invalid choice!")
     else:
